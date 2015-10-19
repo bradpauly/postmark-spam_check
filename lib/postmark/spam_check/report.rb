@@ -45,7 +45,7 @@ module Postmark
 
         # Ignore the first two lines.
         report_text.split(/\n/)[2..-1].each do |line|
-          rule, description = line[4..-1].strip.split(/\s/, 2).map(&:strip)
+          rule, description = line[5..-1].strip.split(/\s{2,}/, 2).map(&:strip)
 
           if description
             points = line[0..3].strip.to_f

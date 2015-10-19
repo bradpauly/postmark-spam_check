@@ -17,6 +17,13 @@ class Postmark::SpamCheck::ReportTest < Minitest::Test
     refute_empty report.details
   end
 
+  def test_parses_spamassassin_report_correctly
+    report = Postmark::SpamCheck::Report.new("testing")
+    report.load_results('success' => true, 'score' => '7.9', 'report' => testing_spamassassin_report)
+    # TODO: Better way to check, this is fragile.
+    assert_equal 'MISSING_FROM', report.details[5][:rule]
+  end
+
   def test_handles_unexpected_report_format
     report = Postmark::SpamCheck::Report.new("raw email")
     report.load_results('success' => true, 'score' => '1.2', 'report' => "WAT\nWAT\nWAT\r\nWAT\nWAT\r\nWAT\r\n")

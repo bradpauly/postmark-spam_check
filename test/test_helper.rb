@@ -17,3 +17,21 @@ def test_spamassassin_report
 END
   text
 end
+
+def testing_spamassassin_report
+  text = <<END
+ pts rule name               description
+---- ---------------------- --------------------------------------------------
+-0.0 NO_RELAYS              Informational: message was not relayed via SMTP
+ 1.2 MISSING_HEADERS        Missing To: header
+ 0.1 MISSING_MID            Missing Message-Id: header
+ 1.8 MISSING_SUBJECT        Missing Subject: header
+ 2.3 EMPTY_MESSAGE          Message appears to have no textual parts and no
+                            Subject: text
+ 1.0 MISSING_FROM           Missing From: header
+ -0.0 NO_RECEIVED            Informational: message has no Received headers
+ 1.4 MISSING_DATE           Missing Date: header
+ 0.0 NO_HEADERS_MESSAGE     Message appears to be missing most RFC-822 headers
+END
+  text
+end
