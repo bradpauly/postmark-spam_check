@@ -1,8 +1,8 @@
 # Postmark::SpamCheck
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/postmark/spam_check`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a simple client for http://spamcheck.postmarkapp.com/
 
-TODO: Delete this and the text above, and describe your gem
+I wrote it because the [one that is available](https://github.com/krasio/postmark_spamcheck) has a number of dependencies that I didn't want and is getting old. This library only uses the Ruby standard library.
 
 ## Installation
 
